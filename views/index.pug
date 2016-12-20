@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Say something meaningful here.
+  p.lead Say something worthwhile here.
+  a(href="/") Go home
+  br
+  br
+  if (!user)
+    a(href="/login") Login
+    br
+    a(href="/auth/facebook") Login via Facebook
+    br
+    a(href="/auth/twitter") Login via Twitter
+    br
+    a(href="/auth/google") Login via Google
+    br
+    a(href="/register") Register
+  if (user)
+    p You are currently logged in as #{user.username}
+    a(href="/logout") Logout
